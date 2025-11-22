@@ -2,7 +2,7 @@ import React from 'react';
 import { TodoItem } from './TodoItem';
 
 export default {
-  title: 'Components/TodoItem',
+  title: 'TodoApp/TodoItem',
   component: TodoItem,
   tags: ['autodocs'],
 };

@@ -1,7 +1,7 @@
 import { HabitTracker } from './HabitTracker';
 
 export default {
-    title: 'Components/HabitTracker',
+    title: 'HabitTracker/HabitTracker',
     component: HabitTracker,
     parameters: {
         layout: 'centered',

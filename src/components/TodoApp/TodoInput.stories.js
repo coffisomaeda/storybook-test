@@ -2,7 +2,7 @@ import React from 'react';
 import { TodoInput } from './TodoInput';
 
 export default {
-  title: 'Components/TodoInput',
+  title: 'TodoApp/TodoInput',
   component: TodoInput,
   tags: ['autodocs'],
 };

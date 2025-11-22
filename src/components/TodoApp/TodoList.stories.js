@@ -2,7 +2,7 @@ import React from 'react';
 import { TodoList } from './TodoList';
 
 export default {
-  title: 'Components/TodoList',
+  title: 'TodoApp/TodoList',
   component: TodoList,
   tags: ['autodocs'],
 };
