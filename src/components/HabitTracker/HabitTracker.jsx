@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './HabitTracker.css';
 
 export const HabitTracker = ({ initialHabits = [] }) => {
   const [habits, setHabits] = useState(initialHabits);
@@ -39,49 +38,50 @@ export const HabitTracker = ({ initialHabits = [] }) => {
   };
 
   return (
-    <div className="habit-tracker-container">
-      <div className="habit-tracker-header">
-        <h2>Weekly Habits</h2>
+    <div className="font-sans max-w-2xl mx-auto p-8 bg-gray-50 rounded-2xl shadow-lg">
+      <div className="text-center mb-8">
+        <h2 className="text-gray-800 text-3xl m-0">Weekly Habits</h2>
       </div>
 
-      <div className="habit-input-group">
+      <div className="flex gap-2.5 mb-8 bg-white p-2.5 rounded-xl shadow-sm">
         <input
           type="text"
-          className="habit-input"
+          className="flex-1 border-none p-3 text-base outline-none rounded-lg bg-gray-100 transition-colors focus:bg-gray-200"
           placeholder="Add a new habit..."
           value={newHabit}
           onChange={(e) => setNewHabit(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && addHabit()}
         />
-        <button className="add-habit-btn" onClick={addHabit}>
+        <button className="bg-purple-600 text-white border-none px-5 rounded-lg font-semibold cursor-pointer transition-all hover:bg-purple-700 active:scale-95" onClick={addHabit}>
           Add
         </button>
       </div>
 
-      <div className="habit-list">
+      <div className="flex flex-col gap-4">
         {habits.map((habit) => (
-          <div key={habit.id} className="habit-card">
-            <div className="habit-info">
-              <span className="habit-name">{habit.name}</span>
-              <span className="habit-streak">
+          <div key={habit.id} className="bg-white p-6 rounded-2xl shadow-sm transition-transform hover:-translate-y-0.5">
+            <div className="flex justify-between items-center mb-4">
+              <span className="font-semibold text-gray-700 text-lg">{habit.name}</span>
+              <span className="text-sm text-gray-400 bg-gray-100 px-2 py-1 rounded-full">
                 {habit.completedDays.length} / 7 days
               </span>
             </div>
-            <div className="week-progress">
+            <div className="flex justify-between gap-1.5">
               {days.map((day) => (
                 <div
                   key={day}
-                  className={`day-check ${
-                    habit.completedDays.includes(day) ? 'completed' : ''
-                  }`}
+                  className="flex flex-col items-center gap-1.5 cursor-pointer"
                   onClick={() => toggleDay(habit.id, day)}
                 >
-                  <div className="check-circle">
+                  <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all text-white ${habit.completedDays.includes(day)
+                    ? 'bg-purple-600 border-purple-600 scale-110'
+                    : 'border-gray-300 hover:border-purple-300'
+                    }`}>
                     {habit.completedDays.includes(day) && (
-                      <span className="check-icon">✓</span>
+                      <span className="text-sm">✓</span>
                     )}
                   </div>
-                  <span className="day-label">{day}</span>
+                  <span className="text-xs text-gray-400 font-medium">{day}</span>
                 </div>
               ))}
             </div>

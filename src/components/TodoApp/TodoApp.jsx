@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { TodoInput } from './TodoInput';
 import { TodoList } from './TodoList';
-import './TodoApp.css';
 
 /**
  * ToDoアプリのメインコンポーネント
@@ -39,12 +38,12 @@ export const TodoApp = () => {
   const totalCount = todos.length;
 
   return (
-    <div className="todo-app">
-      <div className="todo-container">
-        <header className="todo-header">
-          <h1 className="todo-title">📝 ToDoアプリ</h1>
-          <div className="todo-stats">
-            <span className="stats-text">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 p-5 flex justify-center items-start">
+      <div className="w-full max-w-2xl bg-gray-100 rounded-2xl p-8 mt-10 shadow-2xl">
+        <header className="mb-6">
+          <h1 className="text-3xl text-gray-800 mb-3 text-center">📝 ToDoアプリ</h1>
+          <div className="text-center p-2 bg-white rounded-lg shadow-sm">
+            <span className="text-base text-gray-600 font-medium">
               完了: {completedCount} / {totalCount}
             </span>
           </div>
@@ -61,3 +60,4 @@ export const TodoApp = () => {
 };
 
 export default TodoApp;
+

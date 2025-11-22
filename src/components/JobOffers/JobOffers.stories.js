@@ -1,4 +1,4 @@
-import JobOffers from '../components/JobOffers/JobOffers';
+import JobOffers from './JobOffers';
 
 export default {
     title: 'Pages/JobOffers',
